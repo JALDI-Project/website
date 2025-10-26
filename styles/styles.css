@@ -1,0 +1,294 @@
+:root {
+    --background: #dde0ef;
+    --white: #e2e2e2;   
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+* {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  /* <weight>: Use a value from 200 to 900 */
+  font-weight: 500; 
+  font-style: normal;
+}
+
+
+body {
+    background-color: var(--background);
+    max-width: 75rem;
+    margin: auto;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.map-container {
+    /* margin: auto; */
+    width: 80vw;
+    /* padding: 20px; */
+    flex: 1;
+    
+}
+
+/* map for home page */
+.map-home {
+    height: 63vh;
+    border-radius: 7px;
+    /* border: 1px solid #d7d9e4; */
+    filter: saturate(1.65) drop-shadow(1px 1px 4px #a8aab7);
+    cursor: default !important;
+}
+
+.nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--background);
+    /* background-color: red; */
+    /* margin-top: 0; */
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    filter: drop-shadow(0px 9px 5px var(--background));
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.nav > div {
+    display: flex;
+    gap: 26px;
+}
+
+.nav > h2, .nav > div > h2 {
+    padding: 10px;
+}
+
+.submit-report-btn {
+    transition: 0.1s;
+    background-color: #436a9f;
+    border-radius: 7px;
+    color: #f4f6ff;
+    box-shadow: 0px 3px #243152;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 4px #a8aab7);
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submit-report-btn:hover {
+    transition: 0.1s;
+    transform: translateY(-2px);
+}
+
+.leaflet-control-attribution.leaflet-control {
+    /* filter: hue-rotate(-50deg); */
+    filter: saturate(0.5);
+}
+
+.leaflet-marker-icon {
+    filter: saturate(0.5);
+}
+
+.hero {
+    display: flex;
+    flex-direction: space-between;
+    gap: 26px;
+    margin-top: 8vh;
+}
+
+.side-panel {
+    background-color: #bfc0cc;
+    /* border: 1px solid #cccdda; */
+    padding: 22px;
+    border-radius: 7px;
+    min-width: 210px;
+    filter: drop-shadow(1px 1px 4px #63656d);
+}
+
+.side-panel > p {
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #606064;
+}
+
+.map-filters-container {
+    /* width: 80vw; */
+    /* background-color: red; */
+    display: flex;
+    /* gap: 10px; */
+    /* margin-top: 10vh; */
+    margin-bottom: 11px;
+    justify-content: space-between;
+    gap: 11px;
+}
+
+.map-filter-btns {
+    display: flex;
+    gap: 11px;
+}
+
+.filter-btn {
+    font-weight: 500;
+    background-color: var(--background);
+    color: #464646;
+    border: 2px solid #464646;
+    border-radius: 7px;
+    font-size: 16px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    color:black;
+}
+
+.map-filters > button::after {
+    color: red;
+}
+
+.searcher-container {
+    /* background-color: green; */
+    color: #464646;
+    border: 2px solid #464646;
+    border-radius: 7px;
+    padding-left: 10px;
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.searcher-container > div > i{
+    margin-top: 4px;
+}
+
+.searcher {
+    /* margin-right: 285px; */
+    /* width: 250px; */
+    /* background-color: red; */
+    border: none;
+    padding-left: 0.7ch;
+    flex: 1;
+}
+
+.searcher:focus {
+    /* background-color: red; */
+    outline: none;
+}
+
+.search-results {
+    position: absolute;
+    /* background-color: rgba(220, 223, 239, 0.65); */
+    /* border: 2px solid rgba(209, 210, 217, 0.85); */
+    left: 0;
+    top: 38px;
+    z-index: 1;
+    /* display: none; */
+    width: 100%;
+    /* min-height: 100px; */
+    border-radius: 7px;
+    /* padding: 20px; */
+    /* backdrop-filter: blur(3px); */
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    /* gap: 10px; */
+    overflow: hidden;
+    filter: drop-shadow(1px 1px 4px #63656d);
+    
+}
+
+.search-result-container {
+    display: flex;
+    /* background-color: red; */
+    /* margin: 10px; */
+    /* gap: 100px; */
+    
+}
+
+.search-result {
+    /* background-color: green; */
+    /* display: flex; */
+    flex-direction: column;
+    line-height: 0ch;
+    width: 100%;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+}
+
+.search-result > button {
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #bfc0cc;
+    border-top: 1px solid #90919f;
+}
+
+.search-result > button:hover {
+    background-color: #afb0bf;
+}
+
+.result-not-found-btn:hover {
+    background-color: #bfc0cc !important;
+    cursor: default;
+}
+
+.search-results > div:first-child > .search-result > button {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-top: none;
+}
+
+
+/* TODO: fix this, for some reason it doesn't work???? */
+.search-result > div:last-child > .search-result > button {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.return-home-btn {
+    transition: 0.1s;
+    color: #436a9f;
+    border-radius: 7px;
+    background-color: var(--background);
+    border: 3px solid #436a9f;
+    /* box-shadow: 0px 2px #243152; */
+    cursor: pointer;
+    /* filter: drop-shadow(1px 1px 4px #a8aab7); */
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.return-home-btn:hover {
+    transition: 0.1s;
+    transform: translateY(-2px);
+}

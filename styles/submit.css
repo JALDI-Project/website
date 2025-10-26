@@ -1,0 +1,98 @@
+/* CSS FOR SUBMIT PAGE */
+
+/* map for submit page */
+.map-submit {
+    height: 52vh;
+    /* width: 400px; */
+    border-radius: 7px;
+    /* border: 1px solid #d7d9e4; */
+    filter: saturate(1.65) drop-shadow(1px 1px 4px #a8aab7);
+    cursor: pointer !important;
+    margin-top: 13px;
+}
+
+.form-input {
+    width: 500px;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #626262;
+    background-color: #e6e8ed;
+    
+}
+
+textarea {
+    height: 66%;
+    border: 1px solid #626262;
+    background-color: #e6e8ed;
+}
+
+
+.form-container {
+    display: flex;
+    justify-content:space-around;
+    gap: 40px;
+}
+
+.form-map-container {
+    flex: 1;
+    margin-top: 2px;
+}
+
+.auto-detect-btn {
+    border: none;
+    background-color: #c7cad6;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 2px solid #464646;
+
+}
+
+.form-submit-btn {
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #436a9f;
+    color: var(--background);
+    font-size: xx-large;
+    border: none;
+    /* border: 2px solid #355686; */
+    border-radius: 7px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.form-submit-btn:hover {
+    background-color: #3b5c8b;
+}
+
+label {
+    font-size: 21px;
+    /* margin-top: 15px; */
+    margin-bottom: 2px;
+    /* margin-bottom: 1px; */
+    /* margin-bottom: -20px; */
+    /* background-color: #355686; */
+}
+
+.heading {
+    text-decoration: underline;
+    text-decoration-color: #436a9f;
+    text-underline-offset: 9px;
+    text-decoration-thickness: 5px;
+}
+
+.helper-msg {
+    background-color: #fff20027;
+    font-size: 18px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 0;
+    border: 2px solid #c4aa00;
+    border-radius: 5px;
+    color: #6a5300;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JALDI</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+    </script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://kit.fontawesome.com/021741cec3.js" crossorigin="anonymous"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    </style>
+</head>
+<body>
+    <script defer src="scripts/index.js"></script>
+    
+    <section class="nav-container">
+    <nav class="nav">
+        <h2 style="color: #436a9f;"><a>[JALDI]</a></h2>
+        <div>
+            <h2 style="text-decoration: underline; text-decoration-color: #436a9f; text-underline-offset: 3px; text-decoration-thickness: 2px;"><a><i class="fa-solid fa-house">&nbsp</i>Home</a></h2>
+            <h2><a><i class="fa-solid fa-table-list">&nbsp</i>Dashboard</a></h2>
+            <h2><a><i class="fa-solid fa-book">&nbsp</i>About</a></h2>
+            <h2><a><i class="fa-solid fa-clipboard-question">&nbsp</i>FAQ</a></h2>
+        </div>
+        
+        <a href="submit.html" style="text-decoration: none;">
+            <h2 class="submit-report-btn"><i class="fa-solid fa-arrow-up-from-bracket">&nbsp&nbsp</i>Submit Report</h2>
+        </a>
+    </nav>
+    </section>
+
+    <section class="hero">
+        <div class="map-container">
+            <div class="map-filters-container">
+                <div class="map-filter-btns">
+                    <button type="button" id="all-india-btn" style="color: #436a9f; border-color: #436a9f;" class="filter-btn">All India</button>
+                    <button type="button" id="local-area-btn" class="filter-btn">Local Area</button>
+                    <button type="button" id="state-wise-btn" class="filter-btn">State Wise</button>
+                </div>
+                <div class="searcher-container">
+                    <div><i class="fa-solid fa-magnifying-glass fa-s"></i></div>
+                    <input type="text" placeholder="Search" class="filter-btn searcher" id="search">
+                    <div class="search-results" id="search-results">
+                        <!-- will be generated via JS -->
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="filter-btn"><i class="fa-solid fa-arrows-rotate"></i></button>
+                </div>
+            </div>
+            
+            <div id="map" class="map-home"></div>
+        </div>
+
+        <div class="side-panel">
+            <p>No hazards reported in your area.</p>
+        </div>
+    </section>
+</body>
+</html>
