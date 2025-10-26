@@ -1,8 +1,4 @@
 const s_map = L.map('map').setView([23.5, 83], 5);
-// var userLatitude = Number(localStorage.getItem("userLatitude"));
-// var userLongitude = Number(localStorage.getItem("userLongitude"));
-
-// console.log(userLatitude);
 
 // Add OpenStreetMap tile layer
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -10,6 +6,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(s_map);
 
+
+// Im leaving this stuff here for future reference, will clean up later
 
 // function onLocationFound(e) {
 //     //console.log(e);
@@ -20,16 +18,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // };
 
 
-// TODO: handle case when location isnt found
-// s_map.locate({ setView: true, maxZoom: 20 });
-// console.log("test");
-// var marker = L.marker([userLatitude, userLongitude]);
-//var markerLayer = L.layerGroup([marker]).addTo(s_map);
-// marker.addTo(s_map);
-// console.log(userLocation);
-
 var marker = null;
-
 
 // Marking a point in the map if its clicked
 function onMapCLick(e) {
@@ -113,19 +102,37 @@ async function displaySearchResults(query) {
 // Form logic
 const form = document.getElementById("reportForm");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", async function(e) {
     if (marker === null) {
         return;
     }
     e.preventDefault();
     
-    const name = document.getElementById("fname");
-    const desc = document.getElementById("fdesc");
+    const name = document.getElementById("fname").value;
+    const title = document.getElementById("ftitle").value;
+    const desc = document.getElementById("fdesc").value;
 
-    // console.log(marker.getLatLng()["lat"]);
-    // TODO: implement this logic
-    // gotta update api first, so this has been put on hold
+    await uploadReport(name, title, desc, marker.getLatLng()["lat"], marker.getLatLng()["lng"]);
 
     window.location = "./thanks.html";
 
 });
+
+async function uploadReport(name, title, description, latitude, longitude) {
+    const request = new Request("https://jaldi-api.vercel.app/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            reporter: name,
+            title: title,
+            description: description,
+            latitude:  latitude,
+            longitude: longitude
+        })
+    });
+
+    await fetch(request);
+    //TODO: add error checks
+}

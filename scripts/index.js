@@ -22,7 +22,6 @@ async function addMarkers() {
     let res = await fetch(request);
     let result = await res.json();
     result = result.data;
-    console.log(result);
 
     result.forEach(item => {
         L.marker([item.latitude, item.longitude]).addTo(map);
@@ -32,22 +31,12 @@ addMarkers();
 
 // Event handlers
 function onLocationFound(e) {
-    //console.log(e);
     localLocation = e.latlng;
     localLocationFound = true;
     localLocationCircle = L.circle(localLocation, 8000, {fillOpacity: "0.15", opacity: "0.7"});
 
     localStorage.setItem("userLatitude", localLocation["lat"]);
     localStorage.setItem("userLongitude", localLocation["lng"]);
-    
-    // console.log(typeof(localStorage));
-};
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent(`You clicked the map at ${e.latlng}`)
-        .openOn(map);
 };
 
 function onLocationError(e) { alert(e.message) };
@@ -159,7 +148,6 @@ async function displaySearchResults(query) {
     searchResults.style.display = "flex";
 
     var resultButtons = document.getElementsByClassName("result-btn");
-    //console.log(resultButtons[0]);
 
     for (let i = 0; i < resultButtons.length; i ++) {
         let button = resultButtons[i];
